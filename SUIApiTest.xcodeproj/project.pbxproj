@@ -11,6 +11,8 @@
 		4E34EBEA2C5527BE00B9189F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E34EBE92C5527BE00B9189F /* ContentView.swift */; };
 		4E34EBEC2C5527BF00B9189F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E34EBEB2C5527BF00B9189F /* Assets.xcassets */; };
 		4E34EBEF2C5527BF00B9189F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E34EBEE2C5527BF00B9189F /* Preview Assets.xcassets */; };
+		4E34EBF62C5529CC00B9189F /* InterfaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E34EBF52C5529CC00B9189F /* InterfaceView.swift */; };
+		4E34EBF82C552FFE00B9189F /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E34EBF72C552FFE00B9189F /* CellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		4E34EBE92C5527BE00B9189F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4E34EBEB2C5527BF00B9189F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E34EBEE2C5527BF00B9189F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4E34EBF52C5529CC00B9189F /* InterfaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceView.swift; sourceTree = "<group>"; };
+		4E34EBF72C552FFE00B9189F /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,7 @@
 			children = (
 				4E34EBE72C5527BE00B9189F /* SUIApiTestApp.swift */,
 				4E34EBE92C5527BE00B9189F /* ContentView.swift */,
+				4E34EBF92C55312500B9189F /* View */,
 				4E34EBEB2C5527BF00B9189F /* Assets.xcassets */,
 				4E34EBED2C5527BF00B9189F /* Preview Content */,
 			);
@@ -65,6 +70,23 @@
 				4E34EBEE2C5527BF00B9189F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4E34EBF92C55312500B9189F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E34EBFA2C55315100B9189F /* Interface */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4E34EBFA2C55315100B9189F /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				4E34EBF52C5529CC00B9189F /* InterfaceView.swift */,
+				4E34EBF72C552FFE00B9189F /* CellView.swift */,
+			);
+			path = Interface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +159,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E34EBF82C552FFE00B9189F /* CellView.swift in Sources */,
+				4E34EBF62C5529CC00B9189F /* InterfaceView.swift in Sources */,
 				4E34EBEA2C5527BE00B9189F /* ContentView.swift in Sources */,
 				4E34EBE82C5527BE00B9189F /* SUIApiTestApp.swift in Sources */,
 			);
