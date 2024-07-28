@@ -1,10 +1,3 @@
-//
-//  SUIApiTestApp.swift
-//  SUIApiTest
-//
-//  Created by Роман Глухарев on 27.07.24.
-//
-
 import SwiftUI
 
 @main
