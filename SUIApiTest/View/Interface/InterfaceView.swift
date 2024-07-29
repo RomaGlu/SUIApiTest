@@ -32,7 +32,7 @@ struct InterfaceView: View {
                     .frame(height: 34)
                     .frame(maxWidth: .infinity)
                     .background(LinearGradient(colors: [.mint, .white], startPoint: .leading, endPoint: .trailing))
-                    .cornerRadius(5)
+                    .cornerRadius(10)
                     .accentColor(.black)
                     Spacer()
                     Button("Search") {
@@ -49,12 +49,14 @@ struct InterfaceView: View {
                     LazyVGrid(columns: columns) {
                         ForEach(viewModel.dataSource) { character in
                             CellView(characterModel: character)
-                                .frame(width: 100, height: 120)
+                                .frame(width: 100)
+                                .frame(maxHeight: .infinity)
                                 .padding(.top)
                                 .padding(.bottom)
                         }
                     }
                 }
+                .frame(alignment: .center)
                 .cornerRadius(10)
                 .padding()
             }
