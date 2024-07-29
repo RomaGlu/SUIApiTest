@@ -15,11 +15,11 @@ struct InterfaceView: View {
     
     var body: some View {
         ZStack {
-            Image("wallpaper")
+            Image("backgroundImage")
                 .resizable()
                 .scaledToFill()
                 .edgesIgnoringSafeArea(.all)
-                .blur(radius: 10)
+                .blur(radius: 20)
             VStack {
                 HStack {
                     Spacer()
@@ -60,8 +60,8 @@ struct InterfaceView: View {
                 .cornerRadius(10)
                 .padding()
             }
-            .padding(.leading, 40)
-            .padding(.trailing, 40)
+            .padding(.leading, 70)
+            .padding(.trailing, 70)
         }
         .onAppear {
             viewModel.getData(nil)
