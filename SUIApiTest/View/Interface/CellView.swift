@@ -22,7 +22,11 @@ struct CellView: View {
             }
             .padding(.top, 4)
             Text(characterModel?.name ?? "Sun")
+                .lineLimit(nil)
+                .fixedSize(horizontal: false, vertical: true)
+                .multilineTextAlignment(.center)
                 .foregroundColor(.white)
+                .frame(maxHeight: 50)
         }
     }
 }
