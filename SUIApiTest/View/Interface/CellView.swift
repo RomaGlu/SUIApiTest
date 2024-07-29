@@ -7,19 +7,22 @@
 
 import SwiftUI
 
-struct ListCellView: View {
+struct CellView: View {
+    let characterModel: Characters?
+    
     var body: some View {
-        HStack {
-            Image(systemName: "moon")
-                .resizable()
-                .frame(width: 50, height: 50)
-            Text("comics")
-            Spacer()
+        VStack {
+            AsyncImage(url: characterModel?.image) { image in
+                image
+                    .resizable()
+                    .clipShape(RoundedRectangle(cornerRadius: 25.0, style: .continuous))
+                    .frame(width: 100, height: 100)
+            } placeholder: {
+                ProgressView()
+            }
+            .padding(.top, 4)
+            Text(characterModel?.name ?? "Sun")
+                .foregroundColor(.white)
         }
-        .padding()
     }
-}
-
-#Preview {
-    ListCellView()
 }

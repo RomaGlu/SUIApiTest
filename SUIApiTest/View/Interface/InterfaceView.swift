@@ -10,46 +10,60 @@ import SwiftUI
 struct InterfaceView: View {
     
     @State private var textInput = ""
-    @State private var comicsModel = ""
+    @StateObject var viewModel = ViewModel()
+    let columns = Array(repeating: GridItem(.flexible(minimum: 100)), count: 3)
     
     var body: some View {
         ZStack {
+            Image("wallpaper")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+                .blur(radius: 10)
             VStack {
                 HStack {
-                    TextField("Enter character name", text: $textInput)
-                        .textFieldStyle(.roundedBorder)
-                        .padding()
-                        .onSubmit {
-                            print(textInput)
-                        }
+                    Spacer()
+                    TextField("",
+                              text: $textInput,
+                              prompt: Text("Enter character name")
+                        .foregroundStyle(.black.opacity(0.7)))
+                    .padding(.horizontal, 10)
+                    
+                    .frame(height: 34)
+                    .frame(maxWidth: .infinity)
+                    .background(LinearGradient(colors: [.mint, .white], startPoint: .leading, endPoint: .trailing))
+                    .cornerRadius(5)
+                    .accentColor(.black)
+                    Spacer()
                     Button("Search") {
-                        
+                        viewModel.getData(textInput)
                     }
-                    .padding(.trailing)
-                    .foregroundColor(.blue)
+                    .padding()
+                    .foregroundColor(.yellow)
+                    .font(.system(size: 20, weight: .bold))
                 }
-                .background(.gray)
+                .padding(.leading)
+                .padding(.trailing)
                 
                 ScrollView {
-                    LazyVGrid(columns: [
-                                  .init(.fixed(50)),
-                                  .init(.adaptive(
-                                            minimum: 60
-                                        )),
-                                  /*
-                                  .init(.flexible(minimum: 30))
-                                  */
-                              ]) {
-    //                   View here
+                    LazyVGrid(columns: columns) {
+                        ForEach(viewModel.dataSource) { character in
+                            CellView(characterModel: character)
+                                .frame(width: 100, height: 120)
+                                .padding(.top)
+                                .padding(.bottom)
+                        }
                     }
-                    .padding(8)
                 }
-                .background(.gray)
-                .foregroundColor(.black)
+                .cornerRadius(10)
+                .padding()
             }
-            .foregroundColor(.clear)
+            .padding(.leading, 40)
+            .padding(.trailing, 40)
         }
-        .background(.gray)
+        .onAppear {
+            viewModel.getData(nil)
+        }
     }
 }
 

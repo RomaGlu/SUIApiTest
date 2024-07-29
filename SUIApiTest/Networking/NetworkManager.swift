@@ -1,8 +1,9 @@
 import Foundation
 import Alamofire
 
-class APIFetchHandler {
-    static let sharedInstance = APIFetchHandler()
+@Observable
+class NetworkManager {
+    static let sharedInstance = NetworkManager()
 //    private var isStarting = false
     
     private func createURL(baseURL: String, path: String?, queryItems: [URLQueryItem]? = nil) -> URL? {
@@ -26,8 +27,6 @@ class APIFetchHandler {
         let queryItem = [URLQueryItem(name: "name", value: queryItemValue)]
         
         let urlRequest = createURL(baseURL: baseURL, path: urlPath, queryItems: queryItem)
-        
-//        isStarting = true
         
         guard let url = urlRequest else { return }
         print(url)
